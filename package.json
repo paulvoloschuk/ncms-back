@@ -4,7 +4,8 @@
   "description": "API",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon lib/index.js --exec babel-node"
+    "start": "nodemon server/index.js --exec babel-node",
+    "build": "rimraf dist/ && babel ./ --out-dir dist/ --ignore ./node_modules,./.babelrc,./package.json,./npm-debug.log --copy-files"
   },
   "author": "Paul Voloschuk",
   "license": "ISC",
@@ -15,7 +16,8 @@
     "express": "^4.15.4",
     "jsonwebtoken": "^7.4.3",
     "mysql": "^2.14.1",
-    "pretty-logger": "^0.1.2"
+    "pretty-logger": "^0.1.2",
+    "rimraf": "^2.6.2"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",

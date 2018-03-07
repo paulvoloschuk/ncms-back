@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="115" height="74" viewBox="0 0 115 74">
+    <defs>
+        <linearGradient id="a" x1="102.579%" x2="50%" y1="83.244%" y2="-43.564%">
+            <stop offset="0%" stop-color="#FFF"/>
+            <stop offset="100%" stop-color="#0061C4"/>
+        </linearGradient>
+        <linearGradient id="b" x1="0%" y1="46.072%" y2="46.072%">
+            <stop offset="0%" stop-color="#005EC2"/>
+            <stop offset="56.5%" stop-color="#118AF8"/>
+            <stop offset="100%" stop-color="#019DEC"/>
+        </linearGradient>
+        <linearGradient id="c" x1="67.713%" x2="73.623%" y1="55.821%" y2="126.852%">
+            <stop offset="0%" stop-color="#0057B4"/>
+            <stop offset="100%" stop-color="#019DEC"/>
+        </linearGradient>
+        <linearGradient id="d" x1="100%" x2="0%" y1="50%" y2="50%">
+            <stop offset="0%" stop-color="#16DE99"/>
+            <stop offset="100%" stop-color="#00C8CE"/>
+        </linearGradient>
+        <linearGradient id="f" x1="7.809%" x2="115.336%" y1="109.088%" y2="56.217%">
+            <stop offset="0%" stop-color="#FFF"/>
+            <stop offset="100%" stop-color="#0061C4"/>
+        </linearGradient>
+        <ellipse id="e" cx="43.909" cy="35.109" rx="13.591" ry="7.86"/>
+        <linearGradient id="h" x1="96.389%" x2="-169.556%" y1="76.931%" y2="-248.516%">
+            <stop offset="0%" stop-color="#FFF"/>
+            <stop offset="10.488%" stop-color="#E4EEF9"/>
+            <stop offset="10.488%" stop-color="#E4EEF9"/>
+            <stop offset="100%" stop-color="#0061C4"/>
+        </linearGradient>
+        <ellipse id="g" cx="43.909" cy="34.061" rx="13.591" ry="7.86"/>
+        <ellipse id="j" cx="43.909" cy="33.537" rx="7.318" ry="4.192"/>
+        <linearGradient id="k" x1="67.713%" x2="86.898%" y1="55.821%" y2="161.484%">
+            <stop offset="0%" stop-color="#005EC2"/>
+            <stop offset="56.5%" stop-color="#118AF8"/>
+            <stop offset="100%" stop-color="#019DEC"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <path fill="url(#a)" d="M114.566 35.364s-.02 1.862.005 3.248c.026 1.426-.86 2.856-2.657 3.938l-48.185 29c-3.544 2.132-9.343 2.132-12.888 0l-48.183-29C.86 41.467-.026 40.035.001 38.609c.025-1.385 0-3.01 0-3.01l50.84-29.807c3.545-2.133 9.344-2.133 12.888 0l50.837 29.572z"/>
+        <path fill="url(#b)" d="M111.914 31.649c3.544 2.133 3.544 5.623 0 7.756L63.729 68.406c-3.544 2.132-9.343 2.132-12.888 0l-48.183-29c-3.544-2.134-3.544-5.624 0-7.757L50.841 2.648c3.545-2.133 9.344-2.133 12.888 0l48.185 29z"/>
+        <path fill="url(#c)" d="M103.924 31.655c3.06 1.842 3.06 4.855 0 6.696L62.33 63.385c-3.06 1.84-8.065 1.84-11.124 0L9.613 38.351c-3.06-1.841-3.06-4.854 0-6.696L51.206 6.621c3.059-1.841 8.065-1.841 11.124 0l41.594 25.034z"/>
+        <path fill="url(#d)" d="M82.655 21.613l.026-5.648 12.6-7.58V19.26l-2.09-1.235v-5.938l-8.424 5.068-.085 20.011-2.091-1.256.025-5.561-11.502-6.922-.023 5.355L69 27.526l.09-19.945L81.69 0v10.876L79.6 9.64V3.703L71.175 8.77l-.025 5.958 11.504 6.884zm-.01 2.464L71.14 17.154l-.016 3.847 11.503 6.883.017-3.807z"/>
+        <use fill="url(#f)" xlink:href="#e"/>
+        <mask id="i" fill="#fff">
+            <use xlink:href="#g"/>
+        </mask>
+        <use fill="url(#h)" xlink:href="#g"/>
+        <path fill="url(#d)" d="M37.644 35.616l-6.948 1.87 4.064 3.327 6.168 1.955.222-6.637zM38.087 31.654l-6.49-1.134 2.726-6.137 6.952 1.707.37 4.435zM47.098 37.155l1.794 5.033 8.418-3.843-.212-1.912-6.673-1.764zM46.86 29.624l2.241-4.58 8.71 4.82-7.561 1.897z" mask="url(#i)"/>
+        <mask id="l" fill="#fff">
+            <use xlink:href="#j"/>
+        </mask>
+        <use fill="url(#b)" xlink:href="#j"/>
+        <ellipse cx="43.909" cy="34.061" fill="url(#k)" mask="url(#l)" rx="7.318" ry="3.668"/>
+    </g>
+</svg>
