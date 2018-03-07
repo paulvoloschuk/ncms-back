@@ -60,3 +60,6 @@ yarn.lock
 
 # front dist
 /public
+
+# compile folder
+/dist
