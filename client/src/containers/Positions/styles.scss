@@ -1,0 +1,129 @@
+@import "~styles/mediaQueries";
+@import "~styles/constants";
+@import "~styles/mixins";
+
+.container {
+  color: $color4;
+  padding: 50px 0;
+
+  h1 {
+    color: $color10;
+    text-align: center;
+  }
+}
+
+.loading {
+  background: url(/img/loader.svg) no-repeat center/contain;
+  height: 200px;
+  margin-top: 50px;
+}
+
+.position {
+  border-top: 1px solid $color12;
+  padding: 20px;
+  color: inherit;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 200ms ease-in-out;
+  @include breakPoint(false, $screenSize-mobile) {
+    display: block;
+  }
+  > * + * {
+    margin: 0 0 0 40px;
+    @include breakPoint($screenSize-mobile, $screenSize-tablet) {
+      margin-left: 20px;
+    }
+    @include breakPoint(false, $screenSize-mobile) {
+      margin-left: 0;
+    }
+  }
+  &:first-of-type {
+    margin-top: 40px;
+  }
+  &:last-of-type {
+    border-bottom: 1px solid $color12;
+    margin-bottom: 40px;
+  }
+  &:hover {
+    background-color: lighten($color12, 10);
+    text-decoration: none;
+  }
+  .basicInfo {
+    position: relative;
+    padding-left: 100px;
+    flex-grow: 2;
+    @include breakPoint($screenSize-mobile, $screenSize-tablet) {
+      padding-left: 0;
+    }
+    @include breakPoint(false, $screenSize-mobile) {
+      padding-left: 70px;
+    }
+    p {
+      @include breakPoint(false, $screenSize-mobile) {
+        margin-bottom: 1em;
+      }
+    }
+  }
+  .type {
+    @include breakPoint(false, $screenSize-tablet) {
+      float: right;
+      margin: 0;
+    }
+  }
+  .icon {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    height: 60px;
+    width: 60px;
+    overflow: hidden;
+    float: left;
+    @include breakPoint($screenSize-mobile, $screenSize-tablet) {
+      display: none;
+    }
+  }
+  .name {
+    color: $color2;
+    font-size: 20px;
+    font-weight: 400;
+    text-align: left;
+    @include breakPoint(false, $screenSize-mobile) {
+      text-align: left;
+    }
+  }
+  .apply {
+    text-transform: uppercase;
+    color: $color11;
+    border: 1px solid $color11;
+    background: $color1;
+    border-radius: 5px;
+    height: 50px;
+    line-height: 50px;
+    font-weight: 600;
+    padding: 0 40px;
+    font-size: 16px;
+    @include breakPoint(false, $screenSize-mobile) {
+      display: block;
+      text-align: center;
+      width: 150px;
+      margin: 20px auto 0 auto;
+    }
+  }
+  .geography {
+    position: relative;
+    padding-left: 25px;
+    white-space: nowrap;
+    &::before {
+      @include pseudoBasic;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      width: 20px;
+      height: 25px;
+      background: url(/img/geo.svg) no-repeat center/contain;
+    }
+  }
+}

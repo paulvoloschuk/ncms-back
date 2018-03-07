@@ -1,0 +1,45 @@
+@import "~styles/mediaQueries";
+@import "~styles/constants";
+@import "~styles/mixins";
+
+.button {
+  position: relative;
+  background: $color4;
+  padding: .5em 1em .5em 3em;
+  color: $color1;
+  margin-right: 1em;
+  border-radius: 4px;
+  transition: all 200ms ease-in-out;
+  &::before {
+    @include pseudoBasic;
+    position: absolute;
+    display: block;
+    margin-right: .5em;
+    width: 1.5em;
+    height: 1.5em;
+    top: .35em;
+    left: .5em;
+  }
+  &:hover {
+    color: $color1;
+    text-decoration: none;
+  }
+  &.facebook {
+    background-color: $facebook;
+    &::before {
+      background: url(/img/facebook.svg) no-repeat center/contain;
+    }
+    &:hover {
+      background-color: lighten($facebook, 10);
+    }
+  }
+  &.linkedin {
+    background: $linkedin;
+    &::before {
+      background: url(/img/linkedin.svg) no-repeat center/contain;
+    }
+    &:hover {
+      background-color: lighten($linkedin, 10);
+    }
+  }
+}

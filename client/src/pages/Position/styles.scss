@@ -1,0 +1,107 @@
+@import "~styles/mediaQueries";
+@import "~styles/constants";
+@import "~styles/mixins";
+
+.header {
+  position: absolute;
+  top: 0;
+  text-align: center;
+  padding: 15vh 0 10vw 0;
+  background: url(/img/wave1.svg) no-repeat bottom/contain, $gradient1;
+  height: 350px;
+  width: 100vw;
+  transition: height 300ms ease-in-out;
+
+  &__loading {
+    padding-top: 200px;
+    height: 100vh;
+  }
+}
+
+.container {
+  aside {
+    max-width: 300px;
+    @include breakPoint(false, $screenSize-tablet) {
+      padding-top: 50px;
+      max-width: none;
+    }
+  }
+}
+
+.content {
+  color: $color4;
+  padding-top: calc(15vw + 15vh + 10em);
+  h1 {
+    font-size: 45px;
+    color: $color10;
+  }
+  p, ul {
+    line-height: 1.88;
+  }
+}
+
+.flexContainer {
+  display: flex;
+  flex-direction: row nowrap;
+  @include breakPoint(false, $screenSize-tablet) {
+    display: block;
+  }
+  > * {
+    padding: 0 20px;
+    flex: 1 1 100px;
+    &:first-child {
+      flex-grow: 3;
+    }
+    h2 {
+      color: $color11;
+      font-size: 24px;
+    }
+  }
+}
+
+.applyBox {
+  border: 1px solid $color12;
+  padding: 30px 40px;
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+  > * {
+    margin: auto 0 !important;
+  }
+
+}
+
+.extraJob {
+  background: url(/img/wave4.svg) no-repeat top/contain, $gradient1;
+  color: white;
+  text-align: center;
+  padding: 10vw 0 10vw 0;
+  margin-top: 100px;
+  @include breakPoint(false, $screenSize-tablet) {
+    padding: 100px 0 170px 0;
+  }
+
+  h1 {
+    color: white;
+  }
+}
+
+.backLink {
+  display: block;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  border-radius: 5px;
+  color: $color11;
+  border: solid 1px $color11;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-top: 30px;
+  transition: all 200ms ease-in-out;
+  &:hover {
+    background-color: $color11;
+    color: $color1;
+    text-decoration: none;
+  }
+}

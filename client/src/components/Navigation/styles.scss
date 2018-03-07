@@ -1,0 +1,64 @@
+/* Import =================================================================== */
+@import '~styles/mediaQueries.scss';
+@import '~styles/constants.scss';
+
+/* Common styles ============================================================ */
+.container {
+  list-style: none;
+  display: flex !important;
+  flex-flow: row nowrap;
+  margin: 0;
+  padding: 0 20px;
+  align-items: center;
+  justify-content: flex-end;
+  white-space: nowrap;
+  @include breakPoint(false, $screenSize-mobile) {
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: $gradient1;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 200ms ease-in-out;
+  }
+  &__open {
+    @include breakPoint(false, $screenSize-mobile) {
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
+}
+
+.item {
+  height: 100%;
+  @include breakPoint(false, $screenSize-mobile) {
+    margin: 20px 0;
+    height: 40px;
+    width: 100%;
+    text-align: center;
+  }
+  a {
+    transition: color 400ms ease-in-out;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    @include breakPoint(false, $screenSize-mobile) {
+      text-align: center;
+      display: block;
+      color: $color1 !important;
+    }
+  }
+  &__active a {
+    color: $color1;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}

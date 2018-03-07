@@ -1,0 +1,56 @@
+@import '~styles/constants';
+
+.container {
+  font-size: 12px;
+  background: $color16;
+  a {
+    text-transform: none !important;
+  }
+}
+
+.wrapper {
+  padding: 6px 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+
+.dropdown {
+  position: relative;
+  ul {
+    background: $color16;
+    position: absolute;
+    right: 0;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-top: 6px solid transparent;
+    transition: all 200ms ease-in-out;
+    border-radius: 0 0 2px 2px;
+    opacity: 0;
+    pointer-events: none;
+
+    > * {
+      padding: 6px 20px;
+      white-space: nowrap;
+    }
+  }
+  &:hover ul {
+    opacity: 1;
+    pointer-events: all;
+  }
+}
+
+.logout {
+  cursor: pointer;
+  font-family: inherit;
+  background: none;
+  padding: 0;
+  transition: all 200ms ease-in-out;
+  border: none;
+  color: inherit;
+  &:hover {
+    color: $color-warning;
+  }
+}

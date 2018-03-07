@@ -1,0 +1,47 @@
+@import "~styles/mediaQueries";
+@import "~styles/constants";
+@import "~styles/mixins";
+
+.container {
+  @include breakPoint(false, $screenSize-tablet) {
+    display: flex;
+    flex-flow: row wrap;
+  }
+}
+
+.position {
+  display: block;
+  padding: 30px 5px;
+  transition: all 200ms ease-in-out;
+  @include breakPoint(false, $screenSize-tablet) {
+    margin: 0 10px;
+    padding: 30px 20px;
+  }
+  & + & {
+    border-top: 2px solid $color17;
+    @include breakPoint(false, $screenSize-tablet) {
+      border-top: none;
+    }
+  }
+  &:hover{
+    text-decoration: none;
+    background: rgba($color3, 0.02);
+  }
+
+  .icon {
+    float: left;
+    width: 50px;
+    margin: 0 10px 5px 0;
+  }
+  .name {
+    font-size: 20px !important;
+    margin: 0 !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: 400;
+  }
+  .category {
+    color: $color4;
+  }
+}

@@ -1,0 +1,60 @@
+@import "~styles/constants";
+@import "~styles/mixins";
+@import "~styles/mediaQueries";
+
+.flexContainer {
+  display: flex;
+  flex-flow: row wrap;
+  > * {
+    position: relative;
+    flex: 0 0 50%;
+    padding: 10px;
+    box-sizing: border-box;
+
+    &:nth-of-type(3),
+    &:nth-of-type(4),
+    &:nth-of-type(5) {
+      flex: 0 0 100%;
+    }
+  }
+  input, textarea {
+    color: $color1;
+    background: none;
+    border: none;
+    box-sizing: border-box;
+    border-bottom: 2px solid $color14;
+    padding: 0 5px;
+    height: 40px;
+    line-height: 40px;
+    font-family: inherit;
+    transition: 100ms ease-in-out;
+    resize: vertical;
+    &::placeholder {
+      color: $color15;
+      text-transform: uppercase;
+      font-weight: 600;
+      font-size: 14px;
+    }
+    &:focus {
+      border-color: $color7;
+    }
+  }
+  textarea {
+    height: 60px;
+    min-height: 40px;
+    max-height: 300px;
+  }
+  .submit {
+    background: $color1;
+    color: $color14;
+    font-family: inherit;
+    font-weight: 600;
+    padding: 0 30px;
+    height: 40px;
+    width: 200px;
+    line-height: 40px;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 3px;
+  }
+}

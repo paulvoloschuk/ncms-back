@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="130" height="187" viewBox="0 0 130 187">
+    <defs>
+        <linearGradient id="a" x1="0%" y1="46.072%" y2="69.48%">
+            <stop offset="0%" stop-color="#0059BF"/>
+            <stop offset="100%" stop-color="#01A2EF"/>
+        </linearGradient>
+        <linearGradient id="b" x1="50%" x2="50%" y1="140.851%" y2="0%">
+            <stop offset="0%" stop-color="#ACFFFB"/>
+            <stop offset="100%" stop-color="#03BBB2"/>
+        </linearGradient>
+        <linearGradient id="c" x1="50%" x2="50%" y1="140.851%" y2="0%">
+            <stop offset="0%" stop-color="#7BEBE6"/>
+            <stop offset="100%" stop-color="#05BCB3"/>
+        </linearGradient>
+        <linearGradient id="d" x1="50%" x2="50%" y1="-89.332%" y2="100%">
+            <stop offset="0%" stop-color="#004FA9"/>
+            <stop offset="100%" stop-color="#00AEF3"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <path fill="url(#a)" d="M65 0l65 19.5v39L65 78 0 58.5v-39z" transform="translate(0 109)"/>
+        <path fill="url(#b)" d="M27 9h78.581v145H27z"/>
+        <path fill="url(#c)" d="M27 8.944L40.415.149 91.268 0l14.313 9"/>
+        <g fill="url(#d)" transform="translate(34 17)">
+            <path d="M0 0h8.888v21.018H0zM56 0h8.888v21.018H56zM14 0h8.888v8H14zM14 13h8.888v8H14zM28 0h8.888v8H28zM28 13h8.888v8H28zM42 0h8.888v8H42zM42 13h8.888v8H42z"/>
+        </g>
+        <g fill="url(#d)" transform="translate(34 45)">
+            <path d="M0 0h8.888v21.018H0zM56 0h8.888v21.018H56zM14 0h8.888v8H14zM14 13h8.888v8H14zM28 0h8.888v8H28zM28 13h8.888v8H28zM42 0h8.888v8H42zM42 13h8.888v8H42z"/>
+        </g>
+        <g fill="url(#d)" transform="translate(34 73)">
+            <path d="M0 0h8.888v21.018H0zM56 0h8.888v21.018H56zM14 0h8.888v8H14zM14 13h8.888v8H14zM28 0h8.888v8H28zM28 13h8.888v8H28zM42 0h8.888v8H42zM42 13h8.888v8H42z"/>
+        </g>
+        <g fill="url(#d)" transform="translate(34 101)">
+            <path d="M0 0h8.888v21.018H0zM56 0h8.888v21.018H56zM14 0h8.888v8H14zM14 13h8.888v8H14zM28 0h8.888v8H28zM28 13h8.888v8H28zM42 0h8.888v8H42zM42 13h8.888v8H42z"/>
+        </g>
+        <g fill="url(#d)" transform="translate(34 128)">
+            <path d="M0 0h8.888v21.018H0zM56 0h8.888v21.018H56zM14 0h8.888v8H14zM14 13h8.888v8H14zM28 0h8.888v8H28zM28 13h8.888v8H28zM42 0h8.888v8H42zM42 13h8.888v8H42z"/>
+        </g>
+    </g>
+</svg>

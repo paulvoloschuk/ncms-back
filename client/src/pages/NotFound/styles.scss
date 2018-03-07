@@ -1,0 +1,39 @@
+@import '~styles/constants';
+@import '~styles/mixins';
+
+.container {
+  height: 100vh;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  background: $bgColor-submain-left url('/img/career-header.jpg') no-repeat center/cover;
+  @include responsiveBg('/img/career-header@2x.jpg', '2x');
+  @include responsiveBg('/img/career-header@3x.jpg', '3x');
+  & > *:last-child {
+    margin-bottom: 25vh;
+  }
+}
+
+.caption,
+.question {
+  margin: 5px 0;
+}
+
+.navigation {
+  list-style: none;
+  padding: 0;
+  li {
+    display: block;
+    float: left;
+    margin: 0 20px;
+  }
+  a {
+    color: inherit;
+    transition: all 200ms ease-in-out;
+    &:hover {
+      color: $color7;
+      text-decoration: none;
+    }
+  }
+}

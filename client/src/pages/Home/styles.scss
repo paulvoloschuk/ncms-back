@@ -1,0 +1,303 @@
+@import "~styles/constants";
+@import "~styles/mixins";
+@import "~styles/mediaQueries";
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-flow: column nowrap;
+  padding-bottom: 70px;
+  .startLink {
+    &__container {
+      @include breakPoint(false, $screenSize-tablet) {
+        text-align: center;
+      }
+    }
+  }
+}
+
+.header {
+  position: relative;
+  padding: 0 40px;
+  height: 100vh;
+  display: flex;
+  flex-flow: column nowrap;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+  background: $bgColor-submain-left url('/img/homepage-header.jpg') no-repeat center/cover;
+  @include responsiveBg('/img/homepage-header@2x.jpg', '2x');
+  @include responsiveBg('/img/homepage-header@3x.jpg', '3x');
+  text-shadow: 1px 1px 1px rgba(0,0,0,.1);
+
+  &::after {
+    @include pseudoBasic;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    pointer-events: none;
+    background: url(/img/wave1.svg) no-repeat bottom/contain,
+                url(/img/wave2.svg) no-repeat bottom/contain,
+                url(/img/wave3.svg) no-repeat bottom/contain;
+  }
+
+  h1 {
+    font-size: 60px;
+    font-weight: 400;
+    margin: 5px 0;
+    @include breakPoint(false, $screenSize-mobile) {
+      font-size: 54px;
+    }
+  }
+  p {
+    font-size: 24px;
+  }
+  .startLink {
+    width: 240px;
+  }
+}
+.section {
+  padding-top: 100px;
+  h1 {
+    font-size: 45px;
+    font-weight: 600;
+    text-align: left;
+  }
+}
+.turnkey {
+  &__img {
+    width: 300px;
+    float: left;
+    margin: 40px 40px 40px 0;
+    @include breakPoint(false, $screenSize-mobile) {
+      margin: 40px auto;
+      display: block;
+      float: none;
+    }
+  }
+  h1 {
+    color: $color10;
+    @include breakPoint(false, $screenSize-mobile) {
+      text-align: center;
+    }
+  }
+  p {
+    color: $color4;
+    line-height: 1.8;
+  }
+}
+.services {
+  text-align: center;
+  padding: 150px 5px;
+
+  &__item{
+    @include breakPoint(false, $screenSize-mobile) {
+      margin-bottom: 50px;
+    }
+  }
+  div {
+    padding: 0 10px;
+  }
+  h1 {
+    text-align: center;
+    color: $color10;
+  }
+  h2 {
+    color: $color11;
+  }
+  h3 {
+    color: $color4;
+    font-size: 22px;
+    font-weight: 400;
+    margin-bottom: 3em;
+  }
+  img {
+    height: 190px;
+    @include breakPoint($screenSize-mobile, $screenSize-tablet) {
+      height: 160px;
+    }
+  }
+  p {
+    color: $color4;
+    font-size: 16px;
+    line-height: 1.88;
+    max-width: 330px;
+    margin: 0 auto;
+  }
+}
+
+.hiring {
+  color: $color1;
+  background: $gradient1;
+  @include breakPoint(false, $screenSize-mobile) {
+    background-size: auto;
+  }
+  &__img {
+    display: block;
+    @include breakPoint(false, $screenSize-mobile) {
+      margin: 0 auto;
+    }
+  }
+  p {
+    line-height: 1.88;
+    font-size: 16px;
+    @include breakPoint($screenSize-mobile, $screenSize-tablet) {
+      font-size: 14px;
+    }
+  }
+  div + div {
+    padding: 0 20px 0 0;
+    @include breakPoint(false, $screenSize-mobile) {
+      padding: 20px 0 0 0;
+    }
+  }
+}
+.joinLink {
+  margin-left: 0;
+  min-width: 200px;
+  text-align: center;
+}
+.employment {
+  color: $color4;
+  &__img {
+    float:right;
+    display: block;
+    margin-left: 100px;
+    @include breakPoint(false, $screenSize-mobile) {
+      margin: 20px auto;
+      float: none;
+    }
+    @include breakPoint($screenSize-mobile, $screenSize-tablet) {
+      width: 250px;
+    }
+  }
+  p {
+    line-height: 1.88;
+    font-size: 16px;
+  }
+  h1 {
+    text-align: left;
+    color: $color10;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    li {
+      margin: 15px 0;
+      &::before {
+        @include pseudoBasic;
+        display: inline-block;
+        background-image: url(/img/shape.svg);
+        width: 30px;
+        line-height: 1.8;
+        height: 25px;
+        margin-right: 10px;
+        transform: translateY(5px);
+      }
+    }
+  }
+}
+.clients {
+  color: $color4;
+  text-align: center;
+  padding-bottom: 100px;
+  h1 {
+    text-align: center;
+    color: $color10;
+  }
+}
+.contacts {
+  padding: 200px 0 100px;
+  position: relative;
+  color: $color1;
+  text-align: center;
+  background: $bgColor-submain-left url('/img/contacts-bg.jpg') no-repeat center/cover;
+  @include responsiveBg('/img/contacts-bg@2x.jpg', '2x');
+  @include responsiveBg('/img/contacts-bg@3x.jpg', '3x');
+
+  &::before {
+    @include pseudoBasic;
+    position: absolute;
+    top: -1px;
+    left: 0;
+    width: 100%;
+    height: 80%;
+    background: url('/img/wave4.svg') no-repeat top/contain;
+    pointer-events: none;
+  }
+
+  h1 {
+    text-align: center;
+  }
+  a {
+    color: inherit;
+    transition: all 100ms ease-in-out;
+    &:hover {
+      color: $color13;
+      text-decoration: none;
+    }
+  }
+
+  &__list {
+    list-style: none;
+  }
+  &__item {
+    position: relative;
+    font-size: 18px;
+    padding: 15px 0 15px 40px;
+    text-align: left;
+    &::before {
+      @include pseudoBasic;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 25px;
+      height: 25px;
+      transform: translateY(-50%);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+    &_mail::before {
+      background-image: url('/img/mail.svg');
+    }
+    &_phone::before {
+      background-image: url('/img/phone.svg');
+    }
+    &_location::before {
+      background-image: url('/img/location.svg');
+    }
+  }
+}
+.formGrid {
+  padding-top: 30px;
+  display: flex;
+  flex-flow: row nowrap;
+  @include breakPoint(false, $screenSize-tablet) {
+    display: block;
+  }
+  > * {
+    flex: 1 0 100px;
+    align-items: center;
+    &:nth-child(1) {
+      flex-grow: 2;
+    }
+    &:nth-child(2) {
+      flex-grow: 0;
+    }
+    &:nth-child(3) {
+      flex-grow: 1;
+    }
+  }
+  > p {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+  }
+  input, textarea {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}

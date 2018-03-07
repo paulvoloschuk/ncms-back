@@ -1,0 +1,26 @@
+@import "~styles/constants";
+
+.loading {
+  height: 200px;
+  background: url(/img/loader.svg) no-repeat center center;
+}
+
+table {
+  width: 100%;
+  margin: 20px 0;
+  th {
+    padding: 10px;
+    color: $color14;
+    background-color: $color17;
+  }
+  td {
+    padding: 10px;
+    transition: all .1s ease-in-out;
+    .dev {
+      color: $color9;
+    }
+  }
+  .selected td {
+    background-color: lighten($color-warning, 30);
+  }
+}

@@ -1,0 +1,21 @@
+.container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  border-top: 1px solid rgb(209, 209, 209);
+  text-align: center;
+  background: white;
+  color: rgb(140, 140, 140);
+}
+
+.wrapper {
+  padding: 1em 0;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  white-space: nowrap;
+  p {
+    margin: 1em 0;
+  }
+}

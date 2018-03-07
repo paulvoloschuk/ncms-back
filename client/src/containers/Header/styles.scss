@@ -1,0 +1,117 @@
+@import "~styles/constants";
+@import "~styles/mediaQueries";
+@import "~styles/mixins";
+
+.container {
+  color: $bgColor-main;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  transition: all 200ms ease-in-out;
+  a {
+    color: $bgColor-main;
+    text-transform: uppercase;
+    transition: all 200ms ease-in-out;
+    &:hover,
+    &.active {
+      text-decoration: none;
+      text-shadow: 0 0 15px $bgColor-main;
+    }
+  }
+  &__scrollOut {
+    background: $bgColor-main;
+    box-shadow: 0 0 5px rgba(0,0,0,.3);
+    li a {
+      color: $color4;
+      &:hover,
+      &.active {
+        text-shadow: none;
+        background-color: $color11;
+        color: $color1;
+        @include breakPoint(false, $screenSize-mobile) {
+          background-color: transparent;
+          text-shadow: 0 0 15px $bgColor-main;
+        }
+      }
+    }
+  }
+}
+
+.wrapper {
+  display: flex;
+  flex-flow: row nowrap;
+  height: 80px;
+  position: relative;
+  > * {
+    flex: 1 1 100px;
+    height: 100%;
+    display: block;
+  }
+}
+
+.logo {
+  max-width: 100px;
+  position: relative;
+  left: -5px;
+  top: 5px;
+}
+
+.hamburger {
+  z-index: 1000;
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  width: 30px;
+  height: 3px;
+  display: none;
+  border: none;
+  background-color: $color1;
+  transform: translateY(-50%);
+  @include breakPoint(false, $screenSize-mobile) {
+    display: block;
+  }
+  &::before,
+  &::after {
+    @include pseudoBasic;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    background-color: inherit;
+    transition: all 200ms ease-in-out;
+  }
+  &::before {
+    transform: translateY(-10px);
+  }
+  &::after {
+    transform: translateY(10px);
+  }
+
+  &__open {
+    background-color: transparent;
+    &::before {
+      transform: rotate(45deg);
+      background-color: $color1;
+    }
+    &::after {
+      transform: rotate(-45deg);
+      background-color: $color1;
+    }
+  }
+
+  &__scrollOut {
+    background-color: $color4;
+  }
+  &__viewport {
+    display: none;
+    @include breakPoint(false, $screenSize-mobile) {
+      z-index: 1000;
+      display: block;
+      position: relative;
+      border: none;
+      background: none;
+    }
+  }
+}

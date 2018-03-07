@@ -1,0 +1,21 @@
+@import "~styles/constants";
+
+.logo {
+  position: absolute;
+  height: 60px;
+  top: calc(50% - 30px);
+}
+
+.primary {
+  fill: $color1;
+  &__scrolled {
+    fill: $color11;
+  }
+}
+
+.secondary {
+  fill: $color5;
+  &__scrolled {
+    fill: $color11;
+  }
+}

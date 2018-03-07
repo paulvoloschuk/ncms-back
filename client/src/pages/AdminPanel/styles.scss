@@ -1,0 +1,36 @@
+@import "~styles/constants";
+
+.container {
+  padding-top: 40px;
+  color: black;
+  display: flex;
+  > *:nth-of-type(2) {
+    flex-grow: 1;
+  }
+}
+
+.menu {
+  border-right: 1px solid $color17;
+  margin: 0 20px 20px 0;
+  list-style: none;
+  padding: 0 20px 0 0;
+  a {
+    display: block;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    color: $color4;
+    text-align: center;
+    transition: all .2s ease-in-out;
+    i {margin: 0 !important}
+    &:hover {
+      background-color: $color17;
+      text-decoration: none;
+    }
+    &.active {
+      background-color: $color10;
+      color: $color1;
+    }
+  }
+}

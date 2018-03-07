@@ -1,0 +1,20 @@
+@mixin breakPoint($from, $to) {
+  @if $to {
+    $to: $to - 1;
+    @if $from {
+      @media screen and (min-width: $from + px) and (max-width: $to + px) {
+        @content;
+      }
+    }
+    @else {
+      @media screen and (max-width: $to + px) {
+        @content;
+      }
+    }
+  }
+  @else {
+    @media screen and (min-width: $from + px) {
+      @content;
+    }
+  }
+}

@@ -1,0 +1,99 @@
+@import '~styles/constants';
+
+.container {
+  background-image: $gradient1;
+  height: calc(100vh - 61px);
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  & > *:last-child {
+    margin-bottom: 25vh;
+  }
+}
+
+.panel {
+  padding-top: 20px;
+  width: 300px;
+  background: $color1;
+  border-radius: 2px;
+}
+
+.form {
+  color: $color4;
+  padding: 0 20px 20px 20px;
+  margin-top: 5px;
+  > * {
+   display: block;
+   box-sizing: border-box;
+   & + * {
+     margin-top: 15px;
+   }
+ }
+ label {
+   display: block;
+   .input {
+     height: 40px;
+     line-height: 40px;
+     transition: all 200ms ease-in-out;
+     font-family: inherit;
+     background: none;
+     border: none;
+     width: 100%;
+     border-bottom: 2px solid $color12;
+     box-sizing: border-box;
+     color: $color4;
+     padding: 0 5px;
+     &:focus {
+       border-color: $color11;
+     }
+     &::placeholder {
+       text-transform: uppercase;
+     }
+     &__error {
+       border-color: $color-error;
+     }
+   }
+ }
+ .button {
+   width: 100%;
+   height: 40px;
+   line-height: 40px;
+   background-color: $color11;
+   color: $color1;
+   text-align: center;
+   text-transform: uppercase;
+   border: none;
+   border-radius: 2px;
+   cursor: pointer;
+   &:hover {
+     background-color: $color3;
+   }
+   &:disabled {
+     background-color: $color4;
+   }
+ }
+
+}
+
+.error {
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+  padding: 0 5px;
+  margin: 0;
+  font-size: 80%;
+  color: $color-error;
+  user-select: none;
+  transition: all 200ms ease-in-out;
+  &__login {
+    text-align: center;
+    background: lighten($color-error, 40);
+    border-radius: 2px;
+    line-height: 2em;
+  }
+  &__active {
+    opacity: 1;
+    height: 2em;
+  }
+}

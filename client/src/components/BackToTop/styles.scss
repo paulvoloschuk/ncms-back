@@ -1,0 +1,29 @@
+@import '~styles/constants';
+
+.button {
+  cursor: pointer;
+  z-index: 2;
+  position: fixed;
+  bottom: 60px;
+  right: 10px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0,0,0,.1);
+  background-color: $color1;
+  background-image: url(/img/icon-top.svg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 60%;
+  border: 1px solid $bgColor-rangeLine;
+  transition: all 300ms $easing-bounnce;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+  &.hidden {
+    transform: scale(0);
+    pointer-events: none;
+    transition-timing-function: ease;
+  }
+}

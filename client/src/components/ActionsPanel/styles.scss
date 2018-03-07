@@ -1,0 +1,63 @@
+@import "~styles/constants";
+
+.panel {
+  padding: 20px 10px;
+  display: flex;
+  justify-content: flex-end;
+  &:first-of-type {
+    border-bottom: 1px solid $color17;
+    padding-top: 0;
+  }
+  &:last-of-type {
+    border-top: 1px solid $color17;
+    padding-bottom: 0;
+  }
+  span {
+    flex-grow: 1;
+  }
+  button {
+    text-transform: uppercase;
+    display: none;
+    background: none;
+    padding: 5px 15px;
+    margin-left: 5px;
+    border-radius: 2px;
+    transition: all .1s ease-in-out;
+    user-select: none;
+    &:hover {
+      color: white;
+      cursor: pointer;
+    }
+    &.active {
+      display: inline-block;
+    }
+  }
+  .add {
+    border: 1px solid $color7;
+    color: $color7;
+    &:hover {
+      background-color: $color7;
+    }
+  }
+  .edit {
+    border: 1px solid $color-warning;
+    color: $color-warning;
+    &:hover {
+      background-color: $color-warning;
+    }
+  }
+  .delete {
+    border: 1px solid $color-error;
+    color: $color-error;
+    &:hover {
+      background-color: $color-error;
+    }
+  }
+  .cancel {
+    border: 1px solid $color4;
+    color: $color4;
+    &:hover {
+      background-color: $color4;
+    }
+  }
+}

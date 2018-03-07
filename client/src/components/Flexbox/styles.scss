@@ -1,0 +1,15 @@
+@import "~styles/constants";
+@import "~styles/mediaQueries";
+
+.container {
+  display: flex;
+  @include breakPoint(false, $screenSize-mobile) {
+    display: block;
+  }
+  &__reverse {
+    flex-direction: row-reverse;
+  }
+  > div {
+    flex: 1 1 100px;
+  }
+}

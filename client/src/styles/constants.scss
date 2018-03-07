@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+$screenSize-mobile: 600;
+$screenSize-tablet: 1000;
+$screenSize-desktop: 1400;
+
+/* basic colors ============================================================= */
+$color1:  #ffffff;
+$color2:  #0059bf;
+$color3:  #00a2f0;
+$color4:  #697984;
+$color5:  #C3F4FF;
+$color6:  #1B92AF;
+$color7:  #16de99;
+$color8:  #00c8ce;
+$color9:  #aa97ec;
+$color10: #084690;
+$color11: #017dd6;
+$color12: #e0e0e0;
+$color13: #26ffb4;
+$color14: #045997;
+$color15: #83caff;
+$color16: #222c33;
+$color17: #f2f2f2;
+
+/* social colors ============================================================ */
+$facebook    : #365397;
+$twitter     : #00a9f1;
+$linkedin    : #006db3;
+$apple       : #737373;
+$google      : #4285f4;
+$google_plus : #e0452c;
+$youtube     : #ff3333;
+$vimeo       : #48b6ed;
+$pinterest   : #ce1a19;
+$yelp        : #c30f00;
+$dribbble    : #ed4584;
+$amazon      : #ff9700;
+$ebay        : #083790;
+$skype       : #00acf4;
+$instagram   : #396d9a;
+$dropbox     : #0d84de;
+$flickr      : #ea0066;
+$github      : #2f2f2f;
+$basecamp    : #6bbd6d;
+$tumblr      : #304c68;
+$foursquare  : #207dc5;
+$box         : #1277bc;
+
+$color-warning: #e4aa38;
+$color-error: #f64024;
+
+$gradient1: linear-gradient(to right, $color2 0%,$color3 100%);
+
+$textColor-main: #000;
+$textColor-link: #f64024;
+$textColor-selection: #fff;
+$textColor-filterCaption: #a8a8a8;
+
+$bgColor-main: #fff;
+$bgColor-submain-left: #0059bf;
+$bgColor-submain-right: #00a2f0;
+$bgColor-rangeLine: #e0dbdb;
+$bgColor-callToAction: #7ABF12;
+$bgColor-selection: #f64024;
+
+$fontFamily-main: 'Open Sans', sans-serif;
+
+$easing-bounnce: cubic-bezier(0.85,0.5,0.35,2);
