@@ -7,6 +7,7 @@ import { Helmet } from 'react-helmet'
 
 import ContactForm from 'containers/ContactForm'
 import Header from 'containers/Header'
+import ClientSlider from 'containers/ClientSlider'
 
 import Wrapper from 'components/Wrapper'
 import Flexbox from 'components/Flexbox'
@@ -117,8 +118,7 @@ class Home extends Component {
           <Wrapper>
             <h1>Our Clients</h1>
             <p>We successfully work with companies from all over the world</p>
-
-
+            <ClientSlider />
           </Wrapper>
         </div>
         <div id="contacts" className={compose(classes.section, classes.contacts)}>
