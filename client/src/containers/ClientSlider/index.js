@@ -76,8 +76,7 @@ class ClientSlider extends Component {
         <div className={classes.clients}>
           <div className={classes.avatars}>
             {DATA.map(({id, company: {logo}}, arrayIndex) => {
-              let index = (arrayIndex + this.state.index) % DATA.length
-              console.log(arrayIndex, this.state.index, DATA.length);
+              let index = (arrayIndex + DATA.length - this.state.index) % DATA.length
               return (
                 <div key={logo} className={classes.face} style={{
                   backgroundImage:`url(/img/slider/${logo})`,
