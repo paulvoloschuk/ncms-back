@@ -9,6 +9,9 @@
   @include breakPoint(false, $screenSize-tablet) {
     flex-direction: column;
   }
+  a {
+    color: #017dd6;
+  }
   .clients {
     flex-basis: 300px;
     min-width: 300px;

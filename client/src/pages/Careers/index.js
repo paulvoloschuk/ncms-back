@@ -6,6 +6,7 @@ import PropTypes from 'prop-types'
 import Wrapper from 'components/Wrapper'
 import Header from 'containers/Header'
 import Positions from 'containers/Positions'
+import LifeSlider from 'containers/LifeSlider'
 
 import classes from './styles.scss'
 
@@ -29,6 +30,7 @@ class Careers extends Component {
           <Wrapper>
             <h1>Our Life</h1>
             <p>At SD Solutions, you can really define how company will grow in the future and influence key decisions. We hear everyone and each opinion is considered. We trust you, thus our relationship is built on freedom and responsibility!</p>
+            <LifeSlider />
           </Wrapper>
         </div>
         <div className={classes.benefits}>

@@ -1,0 +1,31 @@
+.lifeSlider {
+  display: grid;
+  grid-template: 1fr 1fr 1fr 1fr / 1fr 1fr 1fr;
+  grid-gap: 10px;
+  > * {
+    min-height: 300px;
+  }
+}
+
+.img {
+  position: relative;
+  background: rgba(black, .2) no-repeat center / cover;
+}
+.quotes {
+  padding: 20px;
+  background: linear-gradient(to left, #16de99, #00c8ce);
+  line-height: 1.8;
+  color: white;
+  font-size: 16px;
+  p::before {
+    content: "-";
+    margin-right: .2em;
+    font-size: 20px;
+  }
+  span {
+    color: rgba(0, 0, 0, 0.32);
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: bold;
+  }
+}

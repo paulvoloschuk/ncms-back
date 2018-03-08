@@ -45,9 +45,9 @@ class ClientSlider extends Component {
     this.state = {index: 0}
   }
 
-  // componentDidMount = () => {
-  //   this.interval = setInterval(this.nextSection, INTERVAL)
-  // }
+  componentDidMount = () => {
+    this.interval = setInterval(this.nextSection, INTERVAL)
+  }
   componentWillUnmount = () => {
     clearInterval(this.interval)
   }
