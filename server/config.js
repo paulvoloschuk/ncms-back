@@ -22,7 +22,7 @@ export const logger = {
   prefix: '-->',
   debug: 'white',
   // Show logs in CLI
-  active: true
+  active: false
 }
 
 export default {
