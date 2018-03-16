@@ -61,5 +61,5 @@ yarn.lock
 # front dist
 /public
 
-# compile folder
-/dist
+# compile folder (temporary removed)
+# /dist
