@@ -5,7 +5,7 @@ export default [
     row: [1]
   },
   {
-    src: "/",
+    src: "6.jpg",
     column: [3],
     row: [1, 3]
   },
@@ -21,17 +21,17 @@ export default [
     row: [2]
   },
   {
-    src: "2.jpg",
+    src: "5.jpg",
     column: [1, 3],
     row: [3]
   },
   {
-    src: "/",
+    src: "4.jpg",
     column: [3],
     row: [3, 5]
   },
   {
-    src: "/",
+    src: "2.jpg",
     column: [1],
     row: [4],
   },

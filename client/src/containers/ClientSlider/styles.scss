@@ -11,6 +11,11 @@
   }
   a {
     color: #017dd6;
+    transition: all 100ms ease-in-out;
+    &:hover {
+      text-decoration: none;
+      color: $color7;
+    }
   }
   .clients {
     flex-basis: 300px;
@@ -24,6 +29,9 @@
         text-align: center !important;
       }
     }
+  }
+  .name {
+    font-weight: bold;
   }
   .feedback {
     flex-grow: 1;
@@ -96,6 +104,7 @@
         opacity: 1 !important;
         z-index: 10000000 !important;
         filter: none !important;
+        border-color: $color2;
         @include breakPoint(false, $screenSize-tablet) {
           top: 0;
         }
