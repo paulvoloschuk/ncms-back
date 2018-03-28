@@ -2,12 +2,13 @@ import express from 'express'
 import cors from 'cors'
 import bodyParser from 'body-parser'
 import mysql from 'mysql'
+import migration from 'mysql-migrations'
 
+import applyMigrations from './migrations'
 import applyRouter from './router'
 import middleware from './middleware'
 import config from './config'
 import log from './logger'
-
 
 // initialize
 const App = express()
@@ -20,6 +21,8 @@ DB.connect(error => error
   ? log.error('Error while connecting to MySQL server \n')
   : log.info('Connection with MySQL server established \n')
 )
+
+applyMigrations(DB)
 
 // middleware
 App.use([
