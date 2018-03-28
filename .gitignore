@@ -62,4 +62,4 @@ yarn.lock
 /public
 
 # compile folder (temporary removed)
-# /dist
+/dist
