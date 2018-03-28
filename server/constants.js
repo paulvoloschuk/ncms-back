@@ -1,1 +1,1 @@
-export const staticDirectoryPath = __dirname + '../../public'
+export const staticDirectoryPath = __dirname + '/../public'

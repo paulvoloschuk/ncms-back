@@ -1,3 +1,5 @@
+export const ENV = process.env.NODE_ENV || 'development'
+
 export const server = {
   port: 3002,
   logLevel: 'trace'
@@ -6,8 +8,8 @@ export const server = {
 export const database = {
   host: 'localhost',
   user: 'root',
-  password: 'paulvoloschuk',
   database: 'sd_api',
+  password: ENV === 'development' ? 'roundforest' : '',
   debug: false
 }
 
@@ -22,7 +24,7 @@ export const logger = {
   prefix: '-->',
   debug: 'white',
   // Show logs in CLI
-  active: false
+  active: ENV === 'development'
 }
 
 export default {
