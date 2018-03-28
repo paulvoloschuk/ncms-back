@@ -60,6 +60,7 @@ yarn.lock
 
 # front dist
 /public
+/client/build
 
 # compile folder (temporary removed)
 /dist
