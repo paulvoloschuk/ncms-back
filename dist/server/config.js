@@ -3,6 +3,8 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+var ENV = exports.ENV = 'production' || 'development';
+console.log('constants', ENV);
 var server = exports.server = {
   port: 3002,
   logLevel: 'trace'
@@ -11,9 +13,9 @@ var server = exports.server = {
 var database = exports.database = {
   host: 'localhost',
   user: 'root',
-  password: 'paulvoloschuk',
   database: 'sd_api',
-  debug: false
+  password: ENV === 'development' ? 'roundforest' : '',
+  debug: ENV === 'development'
 };
 
 var auth = exports.auth = {
@@ -27,7 +29,7 @@ var logger = exports.logger = {
   prefix: '-->',
   debug: 'white',
   // Show logs in CLI
-  active: false
+  active: ENV === 'development'
 };
 
 exports.default = {

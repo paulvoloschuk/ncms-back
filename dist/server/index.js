@@ -21,6 +21,10 @@ var _mysql = require('mysql');
 
 var _mysql2 = _interopRequireDefault(_mysql);
 
+var _mysqlMigrations = require('mysql-migrations');
+
+var _mysqlMigrations2 = _interopRequireDefault(_mysqlMigrations);
+
 var _router = require('./router');
 
 var _router2 = _interopRequireDefault(_router);
@@ -41,14 +45,18 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
+// const DB = mysql.createPool(config.database)
+
+// migration.init(DB, __dirname + '/migrations')
+
 // initialize
 var App = (0, _express2.default)();
 _logger2.default.trace('Initializing application...');
 
 // connect to DB
-var DB = exports.DB = _mysql2.default.createConnection(_config2.default.database);
+var DB = exports.DB = _mysql2.default.createPool(_config2.default.database);
 
-DB.connect(function (error) {
+DB.getConnection(function (error) {
   return error ? _logger2.default.error('Error while connecting to MySQL server \n') : _logger2.default.info('Connection with MySQL server established \n');
 });
 

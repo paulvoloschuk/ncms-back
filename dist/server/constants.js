@@ -3,4 +3,8 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-var staticDirectoryPath = exports.staticDirectoryPath = __dirname + '../../public';
+exports.staticDirectoryPath = undefined;
+
+var _config = require('./config');
+
+var staticDirectoryPath = exports.staticDirectoryPath = __dirname + '/../public';

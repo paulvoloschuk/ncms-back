@@ -1,22 +1,14 @@
 "use strict";
-function setOfCachedUrls(e) {
-  return e.keys().then(function (e) {
-    return e.map(function (e) {
-      return e.url;
-    });
-  }).then(function (e) {
-    return new Set(e);
-  });
-}var precacheConfig = [["/index.html", "063d033dd901fb1b8bd3a49524b9e303"], ["/static/css/main.24ce98ba.css", "badd03f4b8ac1a3cd4daf8bf3795cbea"], ["/static/js/main.19ff7be7.js", "ad01e43186fa0f7578012daf63dbadad"]],
+var precacheConfig = [["/index.html", "1f8058416c8f8a55880e5a3ad0696eb8"], ["/static/css/main.3c7a656d.css", "5b671ad57348c6f3ee59e37c9eb020ed"], ["/static/js/main.9926d7a4.js", "1a421d06cb280e3fce68aabf97888767"]],
     cacheName = "sw-precache-v3-sw-precache-webpack-plugin-" + (self.registration ? self.registration.scope : ""),
     ignoreUrlParametersMatching = [/^utm_/],
     addDirectoryIndex = function addDirectoryIndex(e, t) {
   var n = new URL(e);return "/" === n.pathname.slice(-1) && (n.pathname += t), n.toString();
 },
-    cleanResponse = function cleanResponse(e) {
-  return e.redirected ? ("body" in e ? Promise.resolve(e.body) : e.blob()).then(function (t) {
-    return new Response(t, { headers: e.headers, status: e.status, statusText: e.statusText });
-  }) : Promise.resolve(e);
+    cleanResponse = function cleanResponse(t) {
+  return t.redirected ? ("body" in t ? Promise.resolve(t.body) : t.blob()).then(function (e) {
+    return new Response(e, { headers: t.headers, status: t.status, statusText: t.statusText });
+  }) : Promise.resolve(t);
 },
     createCacheKey = function createCacheKey(e, t, n, r) {
   var a = new URL(e);return r && a.pathname.match(r) || (a.search += (a.search ? "&" : "") + encodeURIComponent(t) + "=" + encodeURIComponent(n)), a.toString();
@@ -26,16 +18,16 @@ function setOfCachedUrls(e) {
     return n.match(e);
   });
 },
-    stripIgnoredUrlParameters = function stripIgnoredUrlParameters(e, t) {
-  var n = new URL(e);return n.hash = "", n.search = n.search.slice(1).split("&").map(function (e) {
+    stripIgnoredUrlParameters = function stripIgnoredUrlParameters(e, n) {
+  var t = new URL(e);return t.hash = "", t.search = t.search.slice(1).split("&").map(function (e) {
     return e.split("=");
-  }).filter(function (e) {
-    return t.every(function (t) {
-      return !t.test(e[0]);
+  }).filter(function (t) {
+    return n.every(function (e) {
+      return !e.test(t[0]);
     });
   }).map(function (e) {
     return e.join("=");
-  }).join("&"), n.toString();
+  }).join("&"), t.toString();
 },
     hashParamName = "_sw-precache",
     urlsToCacheKeys = new Map(precacheConfig.map(function (e) {
@@ -43,14 +35,22 @@ function setOfCachedUrls(e) {
       n = e[1],
       r = new URL(t, self.location),
       a = createCacheKey(r, hashParamName, n, /\.\w{8}\./);return [r.toString(), a];
-}));self.addEventListener("install", function (e) {
-  e.waitUntil(caches.open(cacheName).then(function (e) {
-    return setOfCachedUrls(e).then(function (t) {
-      return Promise.all(Array.from(urlsToCacheKeys.values()).map(function (n) {
-        if (!t.has(n)) {
-          var r = new Request(n, { credentials: "same-origin" });return fetch(r).then(function (t) {
-            if (!t.ok) throw new Error("Request for " + n + " returned a response with status " + t.status);return cleanResponse(t).then(function (t) {
-              return e.put(n, t);
+}));function setOfCachedUrls(e) {
+  return e.keys().then(function (e) {
+    return e.map(function (e) {
+      return e.url;
+    });
+  }).then(function (e) {
+    return new Set(e);
+  });
+}self.addEventListener("install", function (e) {
+  e.waitUntil(caches.open(cacheName).then(function (r) {
+    return setOfCachedUrls(r).then(function (n) {
+      return Promise.all(Array.from(urlsToCacheKeys.values()).map(function (t) {
+        if (!n.has(t)) {
+          var e = new Request(t, { credentials: "same-origin" });return fetch(e).then(function (e) {
+            if (!e.ok) throw new Error("Request for " + t + " returned a response with status " + e.status);return cleanResponse(e).then(function (e) {
+              return r.put(t, e);
             });
           });
         }
@@ -60,24 +60,25 @@ function setOfCachedUrls(e) {
     return self.skipWaiting();
   }));
 }), self.addEventListener("activate", function (e) {
-  var t = new Set(urlsToCacheKeys.values());e.waitUntil(caches.open(cacheName).then(function (e) {
-    return e.keys().then(function (n) {
-      return Promise.all(n.map(function (n) {
-        if (!t.has(n.url)) return e.delete(n);
+  var n = new Set(urlsToCacheKeys.values());e.waitUntil(caches.open(cacheName).then(function (t) {
+    return t.keys().then(function (e) {
+      return Promise.all(e.map(function (e) {
+        if (!n.has(e.url)) return t.delete(e);
       }));
     });
   }).then(function () {
     return self.clients.claim();
   }));
-}), self.addEventListener("fetch", function (e) {
-  if ("GET" === e.request.method) {
-    var t,
-        n = stripIgnoredUrlParameters(e.request.url, ignoreUrlParametersMatching);(t = urlsToCacheKeys.has(n)) || (n = addDirectoryIndex(n, "index.html"), t = urlsToCacheKeys.has(n));!t && "navigate" === e.request.mode && isPathWhitelisted(["^(?!\\/__).*"], e.request.url) && (n = new URL("/index.html", self.location).toString(), t = urlsToCacheKeys.has(n)), t && e.respondWith(caches.open(cacheName).then(function (e) {
+}), self.addEventListener("fetch", function (t) {
+  if ("GET" === t.request.method) {
+    var e,
+        n = stripIgnoredUrlParameters(t.request.url, ignoreUrlParametersMatching),
+        r = "index.html";(e = urlsToCacheKeys.has(n)) || (n = addDirectoryIndex(n, r), e = urlsToCacheKeys.has(n));var a = "/index.html";!e && "navigate" === t.request.mode && isPathWhitelisted(["^(?!\\/__).*"], t.request.url) && (n = new URL(a, self.location).toString(), e = urlsToCacheKeys.has(n)), e && t.respondWith(caches.open(cacheName).then(function (e) {
       return e.match(urlsToCacheKeys.get(n)).then(function (e) {
         if (e) return e;throw Error("The cached response that was expected is missing.");
       });
-    }).catch(function (t) {
-      return console.warn('Couldn\'t serve response for "%s" from cache: %O', e.request.url, t), fetch(e.request);
+    }).catch(function (e) {
+      return console.warn('Couldn\'t serve response for "%s" from cache: %O', t.request.url, e), fetch(t.request);
     }));
   }
 });
