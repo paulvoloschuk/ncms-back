@@ -5,13 +5,26 @@ export const server = {
   logLevel: 'trace'
 }
 
-export const database = {
-  host: 'localhost',
-  user: 'root',
-  database: 'sd_api',
-  password: ENV === 'development' ? 'roundforest' : '',
-  debug: false
-}
+export const database = (() => {
+  const config = {
+    development: {
+      host      : 'localhost',
+      user      : 'root',
+      database  : 'sd_api',
+      password  : 'roundforest',
+      debug     : false
+    },
+    production: {
+      host      : 'localhost',
+      user      : 'root',
+      database  : 'sd_api',
+      password  : '',
+      debug     : false
+    }
+  }
+
+  return config[ENV]
+})()
 
 export const auth = {
   salt: 'SD-awesome-secret-salt',
@@ -24,7 +37,7 @@ export const logger = {
   prefix: '-->',
   debug: 'white',
   // Show logs in CLI
-  active: ENV === 'development'
+  active: true
 }
 
 export default {

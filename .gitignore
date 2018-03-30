@@ -62,5 +62,5 @@ yarn.lock
 /public
 /client/build
 
-# compile folder (temporary removed)
+# compile folder
 /dist

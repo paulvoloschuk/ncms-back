@@ -3,8 +3,8 @@ safe_drop_options_table: >
 
 create_options:
   CREATE TABLE IF NOT EXISTS `options` (
-    `key` varchar(50) DEFAULT NULL,
-    `value` varchar(50) DEFAULT NULL
+    `key` varchar(50) NOT NULL,
+    `value` varchar(50) DEFAULT NULL,
     PRIMARY KEY (`key`)
   ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 

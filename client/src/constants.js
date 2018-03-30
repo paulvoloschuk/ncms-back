@@ -1,3 +1,7 @@
+const __DEV__  = process.env.NODE_ENV === 'development',
+      __PROD__ = process.env.NODE_ENV === 'production',
+      __TEST__ = process.env.NODE_ENV === 'testing'
+
 // Used to revrite parts of application according to current device mode
 export const mediaBreakPoints = {
   mobile: 600,
@@ -21,10 +25,10 @@ export const identity = {
   companyName: 'SD Solutions',
 }
 
+const baseUrl = __DEV__ ? '//localhost:3002/' : ''
 export const apiEntryPoints = {
-  //localhost:3002/
-  positions: '/api/position',
-  login: '/api/user'
+  positions: baseUrl + 'api/position',
+  login: baseUrl + 'api/user'
 }
 
 export const humanizedRequests = {

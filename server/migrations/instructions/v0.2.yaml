@@ -1,5 +1,5 @@
 add_advantage_collumn:
-  ALTER TABLE positions 
+  ALTER TABLE positions
   ADD advantages text AFTER offerings;
 
 another_stupid_migration:
