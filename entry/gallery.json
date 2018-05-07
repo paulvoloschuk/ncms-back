@@ -1,0 +1,14 @@
+[
+  { // block of image
+    "type": "image",
+    "url": "http://path.to/image.jpg",
+    "size": [1,1] // how many cells image can cover
+  },
+  { // block of quote
+    "type": "quote",
+    "message": "text",
+    "author": "text"
+  }
+
+  
+]

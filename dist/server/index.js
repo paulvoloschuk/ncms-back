@@ -25,6 +25,10 @@ var _mysqlMigrations = require('mysql-migrations');
 
 var _mysqlMigrations2 = _interopRequireDefault(_mysqlMigrations);
 
+var _migrations = require('./migrations');
+
+var _migrations2 = _interopRequireDefault(_migrations);
+
 var _router = require('./router');
 
 var _router2 = _interopRequireDefault(_router);
@@ -45,20 +49,18 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
-// const DB = mysql.createPool(config.database)
-
-// migration.init(DB, __dirname + '/migrations')
-
 // initialize
 var App = (0, _express2.default)();
 _logger2.default.trace('Initializing application...');
 
 // connect to DB
-var DB = exports.DB = _mysql2.default.createPool(_config2.default.database);
+var DB = exports.DB = _mysql2.default.createConnection(_config2.default.database);
 
-DB.getConnection(function (error) {
+DB.connect(function (error) {
   return error ? _logger2.default.error('Error while connecting to MySQL server \n') : _logger2.default.info('Connection with MySQL server established \n');
 });
+
+(0, _migrations2.default)(DB);
 
 // middleware
 App.use([].concat(_toConsumableArray(_middleware2.default), [_bodyParser2.default.json(), (0, _cors2.default)()]));

@@ -2,7 +2,6 @@ import express from 'express'
 import cors from 'cors'
 import bodyParser from 'body-parser'
 import mysql from 'mysql'
-import migration from 'mysql-migrations'
 
 import applyMigrations from './migrations'
 import applyRouter from './router'

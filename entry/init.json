@@ -1,0 +1,11 @@
+{
+  "office": "Kyrylivska St, 15/1 Kiev, floor 5",
+  "tel": {
+    "ukr": "+380...",
+    "isr": "+97...."
+  },
+  "social_media": {
+    "facebook": "http://path.to.group",
+    "linkedin": "http://path.to.group",
+  }
+}

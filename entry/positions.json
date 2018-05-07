@@ -1,0 +1,20 @@
+[
+  {
+    "category": "Development", // Quality Assurance, Customer service
+    "geography": "Kiev, Ukraine",
+    "hot": 1 ,
+    "id": 1,
+    "name": "Dummy Position",
+    "offerings": "Awesome offerings",
+    // html content 
+    "advantages": "html, text", // optional
+    "description": "Interesting description",
+    "requirements": "Super experience",
+    "responsibilities": "All most no responsibility",
+    // html content end
+    "timestamp": "2017-11-17T09:59:26.000Z",
+    "type": "Fulltime"
+  }
+
+
+]

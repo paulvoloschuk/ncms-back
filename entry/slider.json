@@ -1,0 +1,18 @@
+[
+  {
+    "id": 0,
+    "name": "Alon Gamzu",
+    "role": "CEO",
+    "company": {
+      "name": "Roundforest",
+      "url": "http://roundforest.com",
+      "photoUrl": "/path/to/photo.jpg",
+      "logoUrl": "/path/to/logo.jpg"
+    },
+    "text": "SD Solutions is a great partner for our Ukraine R&D center. With high proficiency and dedicated attention and service, they manage to connect us with the best developers to match our specific needs and support our ongoing operations there."
+  }
+
+
+
+
+]
